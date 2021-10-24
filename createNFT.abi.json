@@ -1,0 +1,89 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "createToken",
+			"inputs": [
+				{"name":"name","type":"string"},
+				{"name":"typeOriginal","type":"string"},
+				{"name":"uniquenessDegree","type":"uint256"},
+				{"name":"releaseDate","type":"uint256"},
+				{"name":"preEdited","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTokenInfo",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"typeOriginal","type":"string"},
+				{"name":"uniquenessDegree","type":"uint256"},
+				{"name":"releaseDate","type":"uint256"},
+				{"name":"preEdited","type":"bool"}
+			]
+		},
+		{
+			"name": "getTokenOwner",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "makeOrder",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"price","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "seeOrders",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"tokenIdentifier","type":"uint256"},
+				{"name":"tokenOwner","type":"uint256"},
+				{"name":"orderPrice","type":"uint256"}
+			]
+		},
+		{
+			"name": "showTokensCollection",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"name","type":"string"},{"name":"typeOriginal","type":"string"},{"name":"uniquenessDegree","type":"uint256"},{"name":"releaseDate","type":"uint256"},{"name":"preEdited","type":"bool"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"name","type":"string"},{"name":"typeOriginal","type":"string"},{"name":"uniquenessDegree","type":"uint256"},{"name":"releaseDate","type":"uint256"},{"name":"preEdited","type":"bool"}],"name":"tokensCollection","type":"tuple[]"},
+		{"components":[{"name":"id","type":"uint256"},{"name":"price","type":"uint256"}],"name":"orders","type":"tuple[]"},
+		{"name":"tokenToOwner","type":"map(uint256,uint256)"},
+		{"name":"orderToOwner","type":"map(uint256,uint256)"}
+	]
+}
